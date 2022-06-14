@@ -1,3 +1,5 @@
+/* * { border: 1px solid black; } */
+
 .radio{
     display: flex;
     align-items: baseline;
@@ -28,5 +30,9 @@
     border-radius: 20px;
     cursor: pointer;
 }
-)
 
+.calc-one {
+    width: 45px;
+    Height: 15px;
+    padding: 1 2 1 2;
+}
