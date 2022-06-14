@@ -36,3 +36,21 @@
     Height: 15px;
     padding: 1 2 1 2;
 }
+table {
+    width: 22%;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+.results-section {
+  
+}
+tr {
+    margin-top: 15px;
+}
+td {
+    padding-left: 25px;
+    border: 1px solid
+}
+h3 {
+    text-align: center
+}
