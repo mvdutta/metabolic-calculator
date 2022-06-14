@@ -1,0 +1,32 @@
+.radio{
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+.age-height{
+    display: flex;
+    gap: 20px;
+}
+.factors {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.calc-button {
+    display: flex;
+    justify-content: left;
+    margin: 40px 0 40px 0;
+}
+
+#submitButton {
+    width: 125px;
+    height: 25px;
+    background-color: rgb(51, 204, 243);
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+)
+

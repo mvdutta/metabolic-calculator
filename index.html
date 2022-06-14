@@ -8,7 +8,53 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Metabolic Calculators</h1>
-    <h2>Enter patient data below.</h2>   
+    <h1>Metabolic Calculators for Dietitians</h1>
+    <h2>1) Estimated Energy Needs (Mifflin-St. Jeor)</h2>  
+    <p>Enter patient data below:</p> 
+    <form>
+        <div class="radio">
+            <p>Gender:</p>
+            <input type="radio" id="gender1" name="gender" value="male" required>
+            <label for="gender1">Male</label>
+            <input type="radio" id="gender2" name="gender" value="female required"
+            <label for="gender2">Female</label>
+        </div>
+    <div class="age-height">
+        <div class="age-input">
+            <label for="age">Age (years):</label>
+            <input type="number" id="age" name="age" min="1" max="120" required>  
+        </div>
+        <div class="height-input">
+            <label for="height">Height (inches):</label>
+            <input type="number" id="height" name="height" min="1" max="1000" required> 
+        </div>
+        <div class="weight-input">
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" name="weight" min="1" max="1000" required> 
+            <select name="menu" id="menu">
+                <option value="pounds"selected>lbs</option>
+                <option value="kilograms">kg</option>
+            </select>
+        </div>
+    </div>
+    <div class="factors">
+        <div class="activity-factor">
+            <label for="activity">Activity Factor (AF):</label>
+            <input type="text" id="activity" name="activity" maxlength="4" size="4" required>  
+        </div>
+        <div class="injury-factor">
+            <label for="injury">Injury Factor (IF):</label>
+            <input type="text" id="injury" name="injury" maxlength="4" size="4" required>
+        </div>
+    </div>
+    <div class="calc-button">
+        <input type="submit" id="submitButton" value="Calculate">
+    </div>
+    </form>
+    <div class="first-calculation">
+        <p>Based on </p>
+    </div>
+    <h2>2) Estimated Protein Needs</h2>
+    <h2>3) Estimated Fluid Needs</h2>
 </body>
 </html>
