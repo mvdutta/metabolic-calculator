@@ -10,26 +10,27 @@
 </head>
 <body>
     <h1>Metabolic Calculators for Dietitians</h1>
-    <h2>1) Estimated Energy Needs (Mifflin-St. Jeor)</h2>  
+    <h2>Estimated Energy Needs (Mifflin-St. Jeor)</h2>  
+    <div class="energy">
     <h3 class="results-header">Enter patient data below:</h3> 
     <form>
-        <div class="radio">
+        <div class="radio" id="formText">
             <p>Gender:</p>
             <input type="radio" id="gender1" name="gender" value="male" required>
             <label for="gender1">Male</label>
             <input type="radio" id="gender2" name="gender" value="female" required
             <label for="gender2">Female</label>
         </div>
-    <div class="age-height">
+    <div class="age-height"id="formText">
         <div class="age-input">
             <label for="age">Age (years):</label>
             <input type="number" id="age" name="age" min="1" max="120" required>  
         </div>
-        <div class="height-input">
+        <div class="height-input"id="formText">
             <label for="height">Height (inches):</label>
             <input type="number" id="height" name="height" min="1" max="1000" required> 
         </div>
-        <div class="weight-input">
+        <div class="weight-input"id="formText">
             <label for="weight">Weight:</label>
             <input type="number" id="weight" name="weight" min="1" max="1000" required> 
             <select name="menu" id="menu">
@@ -38,12 +39,12 @@
             </select>
         </div>
     </div>
-    <div class="factors">
+    <div class="factors"id="formText">
         <div class="activity-factor">
             <label for="activity">Activity Factor (AF):</label>
             <input type="text" id="activity" name="activity" maxlength="4" size="4" required>  
         </div>
-        <div class="injury-factor">
+        <div class="injury-factor"id="formText">
             <label for="injury">Injury Factor (IF):</label>
             <input type="text" id="injury" name="injury" maxlength="4" size="4" required>
         </div>
@@ -57,26 +58,28 @@
         <h3 class="summary">Summary of Patient Data</h3>   
         <table>
             <tr>
-                <td>Gender: female</td>
-                <td>Height: 68 inches</td>
+                <td>Gender: <span class="comp-text">female</span></td>
+                <td>Height: <span class="comp-text">68 inches</span></td>
             </tr>
             <tr>
-                <td>Age: 25 years</td>
-                <td>Activity Factor: 1.5</td>
+                <td>Age: <span class="comp-text">25 years</span></td>
+                <td>Activity Factor: <span class="comp-text">1.5</span></td>
             </tr>
             <tr>
-                <td>Weight: 156 lbs.</td>
-                <td>Injury Factor: 1.2 </td>
+                <td>Weight:<span class="comp-text"> 156 lbs.</span></td>
+                <td>Injury Factor: <span class="comp-text">1.2 </span></td>
             </tr>
         </table>
     </section>
 
     <div class="results">
         <h3 class="results-header">Results:</h3>
-        <p><strong>BMI</strong> = 23.6</p>
-        <p><strong>Resting Metabolic Rate (RMR)</strong> = 1336 kcal/d</p>
-        <p><strong>Estimated Energy Needs</strong> = 1988 kcal/d</p>
+        <p><strong>BMI</strong> = <span class="comp-text">23.6</span></p>
+        <p><strong>Resting Metabolic Rate (RMR)</strong> = <span class="comp-text">1336 kcal/d</span></p>
+        <p><strong>Estimated Energy Needs</strong> = <span class="comp-text">1988 kcal/d</span></p>
 
+    </div>
+    </div>
     </div>
     <h2>2) Estimated Protein Needs</h2>
     <div class="factors">
@@ -94,7 +97,7 @@
     </div>
     <div class="results">
         <h3 class="results-header">Results:</h3>
-        <p><strong>Estimated Protein Needs</strong> = 85-107 g/d</p>
+        <p><strong>Estimated Protein Needs</strong> = <span class="comp-text">85-107 g/d</span></p>
     </div>
     <h2>3) Estimated Fluid Needs</h2>
     <div class="factors">
@@ -112,7 +115,7 @@
     </div>
     <div class="results">
         <h3 class="results-header">Results:</h3>
-        <p><strong>Estimated Fluid Needs</strong> = 2130-2485 ml/d</p>
+        <p><strong>Estimated Fluid Needs</strong> = <span class="comp-text">2130-2485 ml/d</span></p>
     </div>
 </body>
 </html>
