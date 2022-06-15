@@ -48,12 +48,12 @@
         </div>
     </div>
     <div class="calc-button">
-        <input type="submit" id="submitButton" value="Calculate">
+        <input type="submit" id="submitButton1" value="Calculate">
     </div>
     </form>
     <div class="first-calculation">
-    <section class="results-section">
-        <h3>Summary of Patient Data</h3>   
+    <section>
+        <h3 class="summary">Summary of Patient Data</h3>   
         <table>
             <tr>
                 <td>Gender: female</td>
@@ -68,12 +68,50 @@
                 <td>Injury Factor: 1.2 </td>
             </tr>
         </table>
-
     </section>
-        <p>The <strong>BMI</strong> for a height of <strong>68 inches</strong> and weight of <strong>70.9 kg (156 lbs)</strong> is:  <input class="calc-one" type="text" value="23.7"></p>
-        <p>The <strong>Resting Metabolic Rate (RMR)</strong> for a female</p>
+
+    <div class="results">
+        <h3 class="results-header">Results:</h3>
+        <p><strong>BMI</strong> = 23.6</p>
+        <p><strong>Resting Metabolic Rate (RMR)</strong> = 1336 kcal/d</p>
+        <p><strong>Estimated Energy Needs</strong> = 1988 kcal/d</p>
+
     </div>
     <h2>2) Estimated Protein Needs</h2>
+    <div class="factors">
+        <div class="protein-factor">
+            <label for="low-protein">Protein Factor (low):</label>
+            <input type="text" id="lowProtein" name="low-protein" maxlength="4" size="4" required>  g/kg
+        </div>
+        <div class="protein-factor">
+            <label for="high-protein">Protein Factor (high):</label> 
+            <input type="text" id="highProtein" name="high-protein" maxlength="4" size="4" required> g/kg
+        </div>
+    </div>
+    <div class="calc-button">
+        <input type="submit" id="submitButton2" value="Calculate">
+    </div>
+    <div class="results">
+        <h3 class="results-header">Results:</h3>
+        <p><strong>Estimated Protein Needs</strong> = 85-107 g/d</p>
+    </div>
     <h2>3) Estimated Fluid Needs</h2>
+    <div class="factors">
+        <div class="fluid-factor">
+            <label for="low-fluid">Fluid Factor (low):</label>
+            <input type="text" id="lowFluid" name="low-fluid" maxlength="4" size="4" required>  ml/kg
+        </div>
+        <div class="fluid-factor">
+            <label for="high-fluid">Fluid Factor (high):</label> 
+            <input type="text" id="highFluid" name="high-fluid" maxlength="4" size="4" required> ml/kg
+        </div>
+    </div>
+    <div class="calc-button">
+        <input type="submit" id="submitButton3" value="Calculate">
+    </div>
+    <div class="results">
+        <h3 class="results-header">Results:</h3>
+        <p><strong>Estimated Fluid Needs</strong> = 2130-2485 ml/d</p>
+    </div>
 </body>
 </html>

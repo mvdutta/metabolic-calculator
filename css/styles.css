@@ -22,8 +22,8 @@
     margin: 40px 0 40px 0;
 }
 
-#submitButton {
-    width: 125px;
+#submitButton1 {
+    width: 90px;
     height: 25px;
     background-color: rgb(51, 204, 243);
     font-size: 18px;
@@ -51,6 +51,22 @@ td {
     padding-left: 25px;
     border: 1px solid
 }
-h3 {
-    text-align: center
+.summary {
+  Margin-left: 100px;
+}
+#submitButton2 {
+    width: 90px;
+    height: 25px;
+    background-color: rgb(51, 204, 243);
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#submitButton3 {
+    width: 90px;
+    height: 25px;
+    background-color: rgb(51, 204, 243);
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
 }
