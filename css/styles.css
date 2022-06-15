@@ -27,11 +27,11 @@ h1 {
 }
 
 h2 {
-    font-family: 'Hind Siliguri', sans-serif; 
+    font-family: 'Gentium Plus', serif;
     margin-bottom: 40px;
     margin-left: 180px;
-    padding: 20px;
-    color: rgb(37, 130, 0);
+    padding: 10px;
+    color: #003F13;
 }
 .results-header {
     font-family: 'Karla', sans-serif;
@@ -58,13 +58,13 @@ h2 {
 
 
 #submitButton1 {
-    width: 90px;
+    width: 80px;
     height: 35px;
     background-color:#48D1CC;
-    font-size: 18px;
+    font-size: 16px;
     font-family:'Karla', sans-serif;
-    padding: 5px;
-    margin: 40px 0 30px 320px;
+    padding: 2px;
+    margin: 20px 0 20px 0;
     border-radius: 20px;
     cursor: pointer;
   
@@ -114,33 +114,35 @@ td {
 .protein-fluid {
     margin-top: 40px;
     margin-left: 230px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .factors {
     font-family:'Karla', sans-serif;
     font-size: 18px;
     color:rgb(7, 37, 43);
+    display: flex;
+    flex-direction: column;
 }
 #submitButton2 {
-    width: 90px;
+    width: 80px;
     height: 35px;
     background-color: #48D1CC;
     font-family:'Karla', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 20px;
-    margin: 40px 0 30px 320px;
-    padding: 5px;
+    margin: 20px 0 20px 0;
+    padding: 2px;
     cursor: pointer;
 }
 #submitButton3 {
-    width: 90px;
+    width: 85px;
     height: 35px;
     background-color: #48D1CC;
     font-family:'Karla', sans-serif;
-    font-size: 18px;
-    margin: 40px 0 30px 320px;
+    font-size: 16px;
+    margin: 20px 0 20px 0;
     border-radius: 20px;
-    padding: 5px;
+    padding: 2px;
     cursor: pointer;
 }
