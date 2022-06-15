@@ -1,5 +1,21 @@
 /* * { border: 1px solid black; } */
 
+body {
+    background-color: #F0F8FF;
+}
+h1 {
+    font-family: 'Gentium Plus', serif;
+    font-size: 30px;
+    
+}
+
+h2 {
+    font-family: 'Hind Siliguri', sans-serif; 
+}
+.results-header {
+    font-family: 'Karla', sans-serif;
+    font-weight: strong;
+}
 .radio{
     display: flex;
     align-items: baseline;
@@ -25,7 +41,7 @@
 #submitButton1 {
     width: 90px;
     height: 25px;
-    background-color: rgb(51, 204, 243);
+    background-color:#48D1CC;
     font-size: 18px;
     border-radius: 20px;
     cursor: pointer;
@@ -57,7 +73,7 @@ td {
 #submitButton2 {
     width: 90px;
     height: 25px;
-    background-color: rgb(51, 204, 243);
+    background-color: #48D1CC;
     font-size: 18px;
     border-radius: 20px;
     cursor: pointer;
@@ -65,7 +81,7 @@ td {
 #submitButton3 {
     width: 90px;
     height: 25px;
-    background-color: rgb(51, 204, 243);
+    background-color: #48D1CC;
     font-size: 18px;
     border-radius: 20px;
     cursor: pointer;
