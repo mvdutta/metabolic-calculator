@@ -15,11 +15,9 @@ h1 {
 .container {
     border: 2px solid black;
     margin: 40px 500px 40px 500px;
-    padding: 40px 0 40px 50px;
+    padding: 40px 0 50px 50px;
 }
-.energy {
 
-}
 #formText {
     font-family:'Karla', sans-serif;
     font-size: 18px;

@@ -10,10 +10,10 @@
     <script src="https://kit.fontawesome.com/3aad1676b5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Metabolic Calculators for Dietitians</h1>
+    <h1>Metabolic Calculators <i class="fa-solid fa-calculator"></i></h1>
     <div class="container">
     <div class="energy">
-    <h2>Estimated Energy Needs (Mifflin-St. Jeor)</h2>  
+    <h2>Estimated Energy Needs (Mifflin-St. Jeor) <i class="fa-solid fa-person-running"></i></h2>  
     <h3 class="results-header">Enter patient data below:</h3> 
     <form>
         <div class="radio" id="formText">
@@ -35,7 +35,7 @@
         <div class="weight-input"id="formText">
             <label for="weight">Weight:</label>
             <input type="number" id="weight" name="weight" min="1" max="1000" required> 
-            <select name="menu" id="menu">
+            <select name="units" id="units">
                 <option value="pounds"selected>lbs</option>
                 <option value="kilograms">kg</option>
             </select>
@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="calc-button">
-        <input type="submit" id="submitButton1" value="Calculate">
+        <input type="button" id="submitButton1" value="Calculate">
     </div>
     </form>
     <div class="first-calculation">
@@ -60,16 +60,16 @@
         <h3 class="summary">Summary of Patient Data</h3>   
         <table>
             <tr>
-                <td>Gender: <span class="comp-text">female</span></td>
-                <td>Height: <span class="comp-text">68 inches</span></td>
+                <td>Gender: <span id="genderSpan" class="comp-text"></span></td>
+                <td>Height: <span id="heightSpan" class="comp-text"></span></td>
             </tr>
             <tr>
-                <td>Age: <span class="comp-text">25 years</span></td>
-                <td>Activity Factor: <span class="comp-text">1.5</span></td>
+                <td>Age: <span id="ageSpan" class="comp-text"></span></td>
+                <td>Activity Factor: <span id="activitySpan" class="comp-text"></span></td>
             </tr>
             <tr>
-                <td>Weight:<span class="comp-text"> 156 lbs.</span></td>
-                <td>Injury Factor: <span class="comp-text">1.2 </span></td>
+                <td>Weight: <span id="weightSpan" class="comp-text"></span></td>
+                <td>Injury Factor: <span id="injurySpan" class="comp-text"></span></td>
             </tr>
         </table>
     </section>
@@ -83,7 +83,7 @@
     </div>
     </div>
     </div>
-    <h2 class="protein-fluid"> Estimated Protein Needs</h2>
+    <h2 class="protein-fluid"> Estimated Protein Needs <i class="fa-solid fa-fish"></i></h2>
     <div class="factors">
         <div class="protein-factor">
             <label for="low-protein">Protein Factor (low):</label>
@@ -95,13 +95,13 @@
         </div>
     </div>
     <div class="calc-button">
-        <input type="submit" id="submitButton2" value="Calculate">
+        <input type="button" id="submitButton2" value="Calculate">
     </div>
     <div class="results">
         <h3 class="results-header">Results:</h3>
         <p><strong>Estimated Protein Needs</strong> = <span class="comp-text">85-107 g/d</span></p>
     </div>
-    <h2 class="protein-fluid">Estimated Fluid Needs</h2>
+    <h2 class="protein-fluid">Estimated Fluid Needs <i class="fa-solid fa-glass-water-droplet"></i></h2>
     <div class="factors">
         <div class="fluid-factor">
             <label for="low-fluid">Fluid Factor (low):</label>
@@ -113,12 +113,13 @@
         </div>
     </div>
     <div class="calc-button">
-        <input type="submit" id="submitButton3" value="Calculate">
+        <input type="button" id="submitButton3" value="Calculate">
     </div>
     <div class="results">
         <h3 class="results-header">Results:</h3>
         <p><strong>Estimated Fluid Needs</strong> = <span class="comp-text">2130-2485 ml/d</span></p>
     </div>
 </div>
+<script src="./script.js"></script>
 </body>
 </html>
