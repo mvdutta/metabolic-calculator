@@ -14,8 +14,12 @@ h1 {
 
 .container {
     border: 2px solid black;
-    margin: 40px 500px 40px 500px;
-    padding: 40px 0 50px 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
 }
 
 #formText {
@@ -27,9 +31,10 @@ h1 {
 h2 {
     font-family: 'Gentium Plus', serif;
     margin-bottom: 40px;
-    margin-left: 180px;
     padding: 10px;
     color: #003F13;
+    text-align: center;
+
 }
 .results-header {
     font-family: 'Karla', sans-serif;
