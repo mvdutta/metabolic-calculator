@@ -17,7 +17,9 @@ function reset() {
     for (let input of inputs) {
         input.value= "" 
     }
-
+    document.getElementById("gender1").checked = false;
+    document.getElementById("gender2").checked = false;
 }
 
 document.getElementById("submitButton1").addEventListener("click",calculate);
+document.getElementById("resetButton").addEventListener("click",reset);
