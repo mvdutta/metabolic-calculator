@@ -26,29 +26,29 @@
     <div class="age-height"id="formText">
         <div class="age-input">
             <label for="age">Age (years):</label>
-            <input type="number" id="age" name="age" min="1" max="120" required>  
+            <input class="to-reset" type="number" id="age" name="age" min="1" max="120" required>  
         </div>
         <div class="height-input"id="formText">
             <label for="height">Height (inches):</label>
-            <input type="number" id="height" name="height" min="1" max="1000" required> 
+            <input class="to-reset" type="number" id="height" name="height" min="1" max="1000" required> 
         </div>
         <div class="weight-input"id="formText">
             <label for="weight">Weight:</label>
-            <input type="number" id="weight" name="weight" min="1" max="1000" required> 
+            <input class="to-reset" type="number" id="weight" name="weight" min="1" max="1000" required> 
             <select name="units" id="units">
-                <option value="pounds"selected>lbs</option>
-                <option value="kilograms">kg</option>
+                <option value="lbs"selected>lbs</option>
+                <option value="kg">kg</option>
             </select>
         </div>
     </div>
     <div class="factors"id="formText">
         <div class="activity-factor">
             <label for="activity">Activity Factor (AF):</label>
-            <input type="text" id="activity" name="activity" maxlength="4" size="4" required>  
+            <input class="to-reset" type="text" id="activity" name="activity" maxlength="4" size="4" required>  
         </div>
         <div class="injury-factor"id="formText">
             <label for="injury">Injury Factor (IF):</label>
-            <input type="text" id="injury" name="injury" maxlength="4" size="4" required>
+            <input class="to-reset" type="text" id="injury" name="injury" maxlength="4" size="4" required>
         </div>
     </div>
     <div class="calc-button">
@@ -64,12 +64,12 @@
                 <td>Height: <span id="heightSpan" class="comp-text"></span></td>
             </tr>
             <tr>
-                <td>Age: <span id="ageSpan" class="comp-text"></span></td>
-                <td>Activity Factor: <span id="activitySpan" class="comp-text"></span></td>
+                <td>Age: <span id="ageSpan" class="comp-text ex1"></span></td>
+                <td>AF: <span id="activitySpan" class="comp-text"></span></td>
             </tr>
             <tr>
                 <td>Weight: <span id="weightSpan" class="comp-text"></span></td>
-                <td>Injury Factor: <span id="injurySpan" class="comp-text"></span></td>
+                <td>IF: <span id="injurySpan" class="comp-text"></span></td>
             </tr>
         </table>
     </section>
@@ -87,11 +87,11 @@
     <div class="factors">
         <div class="protein-factor">
             <label for="low-protein">Protein Factor (low):</label>
-            <input type="text" id="lowProtein" name="low-protein" maxlength="4" size="4" required> g/kg
+            <input class="to-reset" type="text" id="lowProtein" name="low-protein" maxlength="4" size="4" required> g/kg
         </div>
         <div class="protein-factor">
             <label for="high-protein">Protein Factor (high):</label> 
-            <input type="text" id="highProtein" name="high-protein" maxlength="4" size="4" required> g/kg
+            <input class="to-reset" type="text" id="highProtein" name="high-protein" maxlength="4" size="4" required> g/kg
         </div>
     </div>
     <div class="calc-button">
@@ -105,11 +105,11 @@
     <div class="factors">
         <div class="fluid-factor">
             <label for="low-fluid">Fluid Factor (low):</label>
-            <input type="text" id="lowFluid" name="low-fluid" maxlength="4" size="4" required>  ml/kg
+            <input class="to-reset" type="text" id="lowFluid" name="low-fluid" maxlength="4" size="4" required>  ml/kg
         </div>
         <div class="fluid-factor">
             <label for="high-fluid">Fluid Factor (high):</label> 
-            <input type="text" id="highFluid" name="high-fluid" maxlength="4" size="4" required> ml/kg
+            <input class="to-reset" type="text" id="highFluid" name="high-fluid" maxlength="4" size="4" required> ml/kg
         </div>
     </div>
     <div class="calc-button">
