@@ -109,7 +109,7 @@ function calculateProtein () {
     if (units === "lbs") {
         weight = weight/2.2 //converting lbs to kg
     }
-    //swal.fire(`Weight in kgs = ${weight}, units is ${units}`)
+
     let lowPro = document.getElementById("lowProtein").value
     let hiPro = document.getElementById("highProtein").value
 
@@ -133,6 +133,56 @@ function calculateProtein () {
     let message = `${proteinNeedsLo.toFixed(0)}-${proteinNeedsHi.toFixed(0)} g/d`
     document.getElementById("protein-result").innerHTML = message;
 }
+
+//function for fluid calculation
+function calculateFluid () {
+      //getting all the input data
+      const form = document.querySelector("form")
+      const data = Object.fromEntries(new FormData(form).entries())
+      let {weight, units} = data;
+      if (units === "lbs") {
+          if (weight < 2  || weight > 1000) {
+          Swal.fire("Enter a valid weight between 2 and 1000 lbs");
+          return;  
+          }
+       }
+  
+       if (units === "kg") {
+          if (weight < 1  || weight > 455) {
+          Swal.fire("Enter a valid weight between 1 and 455 kgs");
+          return;  
+          }
+       }
+      if (units === "lbs") {
+          weight = weight/2.2 //converting lbs to kg
+      }
+
+    let lowFluid = document.getElementById("lowFluid").value
+    let hiFluid = document.getElementById("highFluid").value
+
+    if (isNaN(parseFloat(lowFluid)) || lowFluid < 10 || lowFluid > 50) {
+        Swal.fire("Enter a valid low fluid factor between 10 ml and 50 ml");
+        return;  
+    }
+
+    if (isNaN(parseFloat(hiFluid)) || hiFluid < 20 || hiFluid > 60) {
+        Swal.fire("Enter a valid high fluid factor between 15 ml and 60 ml");
+        return;  
+    }
+    if (hiFluid <= lowFluid) {
+        Swal.fire("High fluid factor should be greater than low fluid factor");
+        return
+    }
+
+    //calculate and display estimated fluid needs
+    let fluidNeedsLo = weight * lowFluid;
+    let fluidNeedsHi = weight * hiFluid;
+    let message = `${fluidNeedsLo.toFixed(0)}-${fluidNeedsHi.toFixed(0)} ml/d`
+    document.getElementById("fluid-result").innerHTML = message;
+}
+      
+
+
    
    
     
@@ -144,8 +194,11 @@ function reset() {
     }
     document.getElementById("gender1").checked = false;
     document.getElementById("gender2").checked = false;
+    document.getElementById("protein-result").innerHTML = "";
+    document.getElementById("fluid-result").innerHTML = "";
 }
 
 document.getElementById("submitButton1").addEventListener("click",calculate);
 document.getElementById("resetButton").addEventListener("click",reset);
 document.getElementById("submitButton2").addEventListener("click",calculateProtein);
+document.getElementById("submitButton3").addEventListener("click",calculateFluid);
