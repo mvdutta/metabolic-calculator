@@ -111,12 +111,27 @@ function calculateProtein () {
     }
     //swal.fire(`Weight in kgs = ${weight}, units is ${units}`)
     let lowPro = document.getElementById("lowProtein").value
-    let HiPro = document.getElementById("highProtein").value
+    let hiPro = document.getElementById("highProtein").value
 
     if (isNaN(parseFloat(lowPro)) || lowPro < 1.0 || lowPro > 2.0) {
-        Swal.fire("Enter a valid protein factor between 1.0 and 2.0");
+        Swal.fire("Enter a valid low protein factor between 1.0 and 2.0");
         return;  
     }
+
+    if (isNaN(parseFloat(hiPro)) || hiPro < 1.0 || hiPro > 3.0) {
+        Swal.fire("Enter a valid high protein factor between 1.0 and 3.0");
+        return;  
+    }
+    if (hiPro <= lowPro) {
+        Swal.fire("High protein factor should be greater than low protein factor");
+        return
+    }
+
+    //calculate and display estimated protein needs
+    let proteinNeedsLo = weight * lowPro;
+    let proteinNeedsHi = weight * hiPro;
+    let message = `${proteinNeedsLo.toFixed(0)}-${proteinNeedsHi.toFixed(0)} g/d`
+    document.getElementById("protein-result").innerHTML = message;
 }
    
    
