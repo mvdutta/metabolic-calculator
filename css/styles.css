@@ -117,11 +117,6 @@ td {
   margin-left: 48px;
 }
 
-.protein-fluid {
-    margin-top: 40px;
-    margin-left: 230px;
-    padding: 10px;
-}
 
 .factors {
     font-family:'Karla', sans-serif;
@@ -164,9 +159,15 @@ td {
     font-family:'Karla', sans-serif;
     color: white;
     padding: 8px 8px;
-    margin: 40px 0 20px 350px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     border: 1px solid black;
     cursor: pointer;
     border-radius: 4px;
 }   
+.reset-button {
+    display: flex;
+    justify-content: center;
+    padding: 8%;
+}
