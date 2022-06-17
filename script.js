@@ -2,12 +2,12 @@
 function calculate() {
     const form = document.querySelector("form")
     const data = Object.fromEntries(new FormData(form).entries())
-    const {activity, age, gender, height, injury, units, weight} = data;
+    let {activity, age, gender, height, injury, units, weight} = data;
 
     //checking all the input//
 
     if (gender==undefined){
-        Swal.fire("Pick a gender");
+        Swal.fire("Gender required for MSJ");
         return;
     }
 
@@ -43,24 +43,28 @@ function calculate() {
         return;  
     }
 
-    if (isNaN(parseFloat(injury)) ||  injury < 1.0 || injury > 1.8) {
+    if (isNaN(parseFloat(injury)) || injury < 1.0 || injury > 1.8) {
         Swal.fire("Enter a valid injury factor between 1.0 and 1.8");
         return;  
     }
+    //Displaying entered values
 
-    // if (isNaN(parseFloat(lowProtein)) || lowProtein < 0.5 || lowProtein > 2.0) {
-    //     Swal.fire("Enter a valid protein factor between 0.5 and 2.0");
-    //     return;  
-    // }
-
-    
     document.getElementById("genderSpan").innerHTML=gender;
     document.getElementById("ageSpan").innerHTML=`${age} years`;
     document.getElementById("weightSpan").innerHTML=`${weight} ${units}`;
     document.getElementById("heightSpan").innerHTML=`${height} in.`;
     document.getElementById("activitySpan").innerHTML=activity;
     document.getElementById("injurySpan").innerHTML=injury;
-   
+
+    //starting calculations
+    height = height * .0254 //convering inches to meters
+
+    if (units === "lbs") {
+        weight = weight/2.2 //converting lbs to kg
+    }
+    const BMI = weight / (height * height)
+
+    document.getElementById("BMI-result").innerHTML=BMI.toFixed(2);
 }
 
 function reset() {
