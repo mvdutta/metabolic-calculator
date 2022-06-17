@@ -1,5 +1,7 @@
 // document.body.style.backgroundColor="blue"
 function calculate() {
+
+    //getting all the input data
     const form = document.querySelector("form")
     const data = Object.fromEntries(new FormData(form).entries())
     let {activity, age, gender, height, injury, units, weight} = data;
@@ -47,6 +49,9 @@ function calculate() {
         Swal.fire("Enter a valid injury factor between 1.0 and 1.8");
         return;  
     }
+
+
+
     //Displaying entered values
 
     document.getElementById("genderSpan").innerHTML=gender;
@@ -56,16 +61,28 @@ function calculate() {
     document.getElementById("activitySpan").innerHTML=activity;
     document.getElementById("injurySpan").innerHTML=injury;
 
-    //starting calculations
+    //calculating and displaying BMI
     height = height * .0254 //convering inches to meters
 
     if (units === "lbs") {
         weight = weight/2.2 //converting lbs to kg
     }
     const BMI = weight / (height * height)
-
     document.getElementById("BMI-result").innerHTML=BMI.toFixed(2);
+
+    //calulating and displaying RMR
+
+    let RMR = 0;
+    height = height * 100; //changing meters to cm
+    if (gender === "male") {
+        RMR = 10 * weight + 6.25 * height - 5 * age + 5;
+    }
+    if (gender === "female") {
+        RMR = 10 * weight + 6.25 * height - 5 * age + 161;
+    }
+    document.getElementById("RMR-result").innerHTML=`${RMR.toFixed(2)} kcal/d`
 }
+
 
 function reset() {
     let inputs= document.getElementsByClassName("to-reset")
