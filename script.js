@@ -70,19 +70,24 @@ function calculate() {
     const BMI = weight / (height * height)
     document.getElementById("BMI-result").innerHTML=BMI.toFixed(2);
 
-    //calulating and displaying RMR
+    //calulating and displaying RMR and TEE
 
     let RMR = 0;
+    let TEE = 0;
     height = height * 100; //changing meters to cm
     if (gender === "male") {
         RMR = 10 * weight + 6.25 * height - 5 * age + 5;
-    }
-    if (gender === "female") {
+        TEE = RMR * activity * injury;
+    } else  {
         RMR = 10 * weight + 6.25 * height - 5 * age + 161;
+        TEE = RMR * activity * injury;
     }
     document.getElementById("RMR-result").innerHTML=`${RMR.toFixed(2)} kcal/d`
+    document.getElementById("TEE-result").innerHTML=`${TEE.toFixed(1)} kcal/d`
 }
-
+   
+   
+    
 
 function reset() {
     let inputs= document.getElementsByClassName("to-reset")
