@@ -85,6 +85,39 @@ function calculate() {
     document.getElementById("RMR-result").innerHTML=`${RMR.toFixed(2)} kcal/d`
     document.getElementById("TEE-result").innerHTML=`${TEE.toFixed(1)} kcal/d`
 }
+
+
+//Function for protein calculation
+function calculateProtein () {
+    //getting all the input data
+    const form = document.querySelector("form")
+    const data = Object.fromEntries(new FormData(form).entries())
+    let {weight, units} = data;
+    if (units === "lbs") {
+        if (weight < 2  || weight > 1000) {
+        Swal.fire("Enter a valid weight between 2 and 1000 lbs");
+        return;  
+        }
+     }
+
+     if (units === "kg") {
+        if (weight < 1  || weight > 455) {
+        Swal.fire("Enter a valid weight between 1 and 455 kgs");
+        return;  
+        }
+     }
+    if (units === "lbs") {
+        weight = weight/2.2 //converting lbs to kg
+    }
+    //swal.fire(`Weight in kgs = ${weight}, units is ${units}`)
+    let lowPro = document.getElementById("lowProtein").value
+    let HiPro = document.getElementById("highProtein").value
+
+    if (isNaN(parseFloat(lowPro)) || lowPro < 1.0 || lowPro > 2.0) {
+        Swal.fire("Enter a valid protein factor between 1.0 and 2.0");
+        return;  
+    }
+}
    
    
     
@@ -100,3 +133,4 @@ function reset() {
 
 document.getElementById("submitButton1").addEventListener("click",calculate);
 document.getElementById("resetButton").addEventListener("click",reset);
+document.getElementById("submitButton2").addEventListener("click",calculateProtein);
