@@ -192,10 +192,13 @@ function reset() {
     for (let input of inputs) {
         input.value= "" 
     }
+    let outputs= document.getElementsByClassName("comp-text")
+    for (let output of outputs){
+        output.innerHTML=""
+    }
     document.getElementById("gender1").checked = false;
     document.getElementById("gender2").checked = false;
-    document.getElementById("protein-result").innerHTML = "";
-    document.getElementById("fluid-result").innerHTML = "";
+
 }
 
 document.getElementById("submitButton1").addEventListener("click",calculate);
