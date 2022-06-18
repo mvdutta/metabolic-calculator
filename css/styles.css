@@ -182,6 +182,13 @@ td {
     justify-content: center;
     padding: 5%;
 }
+.disclaimer {
+    font-family:'Karla', sans-serif;
+    font-size: 18px;
+    color:rgb(7, 37, 43);
+    opacity: .9;
+}
+}
 /* media queries */
 @media only screen and (max-width: 768px) {
     .container {
