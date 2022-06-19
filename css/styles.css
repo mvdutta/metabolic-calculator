@@ -35,11 +35,12 @@ h1 {
 h2 {
     font-family: 'Gentium Plus', serif;
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: -4px;
     padding: 10px;
     color: #0b5763;
     opacity: .9;
     text-align: center;
+    background-color:rgb(219, 240, 240)
 
 }
 .results-header {
@@ -184,7 +185,7 @@ td {
 }
 .disclaimer {
     font-family:'Karla', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     color:rgb(7, 37, 43);
     opacity: .9;
 }
