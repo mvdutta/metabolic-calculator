@@ -198,6 +198,9 @@ td {
     #summaryTable {
         width: 100%;
     }
+    .age-height {
+        flex-direction: column;
+    }
   }
 
   .img-container {
