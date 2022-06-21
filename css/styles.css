@@ -25,7 +25,7 @@ h1 {
     background-color: #f8f8f8;
 }
 
-#formText {
+.formText {
     font-family:'Karla', sans-serif;
     font-size: 18px;
     color:rgb(7, 37, 43);
@@ -195,5 +195,28 @@ td {
     .container {
         width: auto;
     }
+    #summaryTable {
+        width: 100%;
+    }
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+  }
+  
+  #orangecat-image {
+    width: 3%;
+  }
+  .footer {
+    text-align: center;
+    font-family: 'Gentium Plus', serif;
+    font-size: 16px;
+    color: rgb(9, 127, 136);
+    margin-top: -19px;
+  }
+  .footer-paragraph {
+    padding-bottom: 22px;
   }
   

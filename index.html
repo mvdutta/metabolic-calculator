@@ -1,131 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Hind+Siliguri:wght@300&family=Karla&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Hind+Siliguri:wght@300&family=Karla&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://kit.fontawesome.com/3aad1676b5.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/3aad1676b5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <h1>Dietetic Calculator</h1>
     <div class="container">
-    <h2>Estimated Energy Needs (Mifflin-St. Jeor) <i class="fa-solid fa-person-running"></i></h2>  
-    <h3 class="results-header">Enter patient data below:</h3> 
-    <form>
-        <div class="radio" id="formText">
-            <p>Gender:</p>
-            <input type="radio" id="gender1" name="gender" value="male" required>
-            <label for="gender1">Male</label>
-            <input type="radio" id="gender2" name="gender" value="female" required>
-            <label for="gender2">Female</label>
+      <h2>
+        Estimated Energy Needs (Mifflin-St. Jeor)
+        <i class="fa-solid fa-person-running"></i>
+      </h2>
+      <h3 class="results-header">Enter patient data below:</h3>
+      <form>
+        <div class="radio formText">
+          <p>Gender:</p>
+          <input
+            type="radio"
+            id="gender1"
+            name="gender"
+            value="male"
+            required
+          />
+          <label for="gender1">Male</label>
+          <input
+            type="radio"
+            id="gender2"
+            name="gender"
+            value="female"
+            required
+          />
+          <label for="gender2">Female</label>
         </div>
-    <div class="age-height"id="formText">
-        <div class="age-input">
+        <div class="age-height formText">
+          <div class="age-input">
             <label for="age">Age (years):</label>
-            <input class="to-reset" type="number" id="age" name="age" min="1" max="120" size="4"required>  
-        </div>
-        <div class="height-input"id="formText">
+            <input
+              class="to-reset"
+              type="number"
+              id="age"
+              name="age"
+              min="1"
+              max="120"
+              size="4"
+              required
+            />
+          </div>
+          <div class="height-input formText">
             <label for="height">Height (inches):</label>
-            <input class="to-reset" type="number" id="height" name="height" min="1" max="1000" size="4" required> 
-        </div>
-        <div class="weight-input"id="formText">
+            <input
+              class="to-reset"
+              type="number"
+              id="height"
+              name="height"
+              min="1"
+              max="1000"
+              size="4"
+              required
+            />
+          </div>
+          <div class="weight-input formText">
             <label for="weight">Weight:</label>
-            <input class="to-reset" type="number" id="weight" name="weight" min="1" max="1000" size="4" required> 
+            <input
+              class="to-reset"
+              type="number"
+              id="weight"
+              name="weight"
+              min="1"
+              max="1000"
+              size="4"
+              required
+            />
             <select name="units" id="units">
-                <option value="lbs"selected>lbs</option>
-                <option value="kg">kg</option>
+              <option value="lbs" selected>lbs</option>
+              <option value="kg">kg</option>
             </select>
+          </div>
         </div>
-    </div>
-    <div class="factors"id="formText">
-        <div class="activity-factor">
+        <div class="factors formText">
+          <div class="activity-factor">
             <label for="activity">Activity Factor (AF):</label>
-            <input class="to-reset" type="text" id="activity" name="activity" maxlength="4" size="4" required>  
-        </div>
-        <div class="injury-factor"id="formText">
+            <input
+              class="to-reset"
+              type="text"
+              id="activity"
+              name="activity"
+              maxlength="4"
+              size="4"
+              required
+            />
+          </div>
+          <div class="injury-factor formText">
             <label for="injury">Injury Factor (IF):</label>
-            <input class="to-reset" type="text" id="injury" name="injury" value="1" maxlength="4" size="4" required>
+            <input
+              class="to-reset"
+              type="text"
+              id="injury"
+              name="injury"
+              value="1"
+              maxlength="4"
+              size="4"
+              required
+            />
+          </div>
         </div>
-    </div>
-    <div class="calc-button">
-        <input type="button" id="submitButton1" value="Calculate">
-    </div>
-    </form>
-    <div class="first-calculation">
-    <section>
-        <h3 class="summary">Summary of Patient Data</h3>   
-        <table>
+        <div class="calc-button">
+          <input type="button" id="submitButton1" value="Calculate" />
+        </div>
+      </form>
+      <div class="first-calculation">
+        <section>
+          <h3 class="summary">Summary of Patient Data</h3>
+          <table id="summaryTable">
             <tr>
-                <td>Gender: <span id="genderSpan" class="comp-text"></span></td>
-                <td>Height: <span id="heightSpan" class="comp-text"></span></td>
+              <td>Gender: <span id="genderSpan" class="comp-text"></span></td>
+              <td>Height: <span id="heightSpan" class="comp-text"></span></td>
             </tr>
             <tr>
-                <td>Age: <span id="ageSpan" class="comp-text ex1"></span></td>
-                <td>AF: <span id="activitySpan" class="comp-text"></span></td>
+              <td>Age: <span id="ageSpan" class="comp-text ex1"></span></td>
+              <td>AF: <span id="activitySpan" class="comp-text"></span></td>
             </tr>
             <tr>
-                <td>Weight: <span id="weightSpan" class="comp-text"></span></td>
-                <td>IF: <span id="injurySpan" class="comp-text"></span></td>
+              <td>Weight: <span id="weightSpan" class="comp-text"></span></td>
+              <td>IF: <span id="injurySpan" class="comp-text"></span></td>
             </tr>
-        </table>
-    </section>
+          </table>
+        </section>
 
-    <div class="results">
-        <h3 class="results-header">Results:</h3>
-        <p>BMI = <span id ="BMI-result" class="comp-text"></span></p>
-        <p>Resting Metabolic Rate (RMR) = <span id="RMR-result" class="comp-text"></span></p>
-        <p>Estimated Energy Needs = <span id="TEE-result" class="comp-text"></span></p>
-
-    </div>
-    </div>
-    <h2 class="protein-fluid"> Estimated Protein Needs <i class="fa-solid fa-fish"></i></h2>
-    <div class="factors">
+        <div class="results">
+          <h3 class="results-header">Results:</h3>
+          <p>BMI = <span id="BMI-result" class="comp-text"></span></p>
+          <p>
+            Resting Metabolic Rate (RMR) =
+            <span id="RMR-result" class="comp-text"></span>
+          </p>
+          <p>
+            Estimated Energy Needs =
+            <span id="TEE-result" class="comp-text"></span>
+          </p>
+        </div>
+      </div>
+      <h2 class="protein-fluid">
+        Estimated Protein Needs <i class="fa-solid fa-fish"></i>
+      </h2>
+      <div class="factors">
         <div class="protein-factor">
-            <label for="low-protein">Protein Factor (low):</label>
-            <input class="to-reset" type="text" id="lowProtein" name="low-protein" maxlength="4" size="4" required> g/kg
+          <label for="low-protein">Protein Factor (low):</label>
+          <input
+            class="to-reset"
+            type="text"
+            id="lowProtein"
+            name="low-protein"
+            maxlength="4"
+            size="4"
+            required
+          />
+          g/kg
         </div>
         <div class="protein-factor">
-            <label for="high-protein">Protein Factor (high):</label> 
-            <input class="to-reset" type="text" id="highProtein" name="high-protein" maxlength="4" size="4" required> g/kg
+          <label for="high-protein">Protein Factor (high):</label>
+          <input
+            class="to-reset"
+            type="text"
+            id="highProtein"
+            name="high-protein"
+            maxlength="4"
+            size="4"
+            required
+          />
+          g/kg
         </div>
-    </div>
-    <div class="calc-button">
-        <input type="button" id="submitButton2" value="Calculate">
-    </div>
-    <div class="results">
+      </div>
+      <div class="calc-button">
+        <input type="button" id="submitButton2" value="Calculate" />
+      </div>
+      <div class="results">
         <h3 class="results-header">Results:</h3>
-        <p>Estimated Protein Needs* = <span id="protein-result" class="comp-text"></span></p>
-    </div>
-    <h2 class="protein-fluid">Estimated Fluid Needs <i class="fa-solid fa-glass-water-droplet"></i></h2>
-    <div class="factors">
+        <p>
+          Estimated Protein Needs* =
+          <span id="protein-result" class="comp-text"></span>
+        </p>
+      </div>
+      <h2 class="protein-fluid">
+        Estimated Fluid Needs <i class="fa-solid fa-glass-water-droplet"></i>
+      </h2>
+      <div class="factors">
         <div class="fluid-factor">
-            <label for="low-fluid">Fluid Factor (low):</label>
-            <input class="to-reset" type="text" id="lowFluid" name="low-fluid" maxlength="4" size="4" required>  ml/kg
+          <label for="low-fluid">Fluid Factor (low):</label>
+          <input
+            class="to-reset"
+            type="text"
+            id="lowFluid"
+            name="low-fluid"
+            maxlength="4"
+            size="4"
+            required
+          />
+          ml/kg
         </div>
         <div class="fluid-factor">
-            <label for="high-fluid">Fluid Factor (high):</label> 
-            <input class="to-reset" type="text" id="highFluid" name="high-fluid" maxlength="4" size="4" required> ml/kg
+          <label for="high-fluid">Fluid Factor (high):</label>
+          <input
+            class="to-reset"
+            type="text"
+            id="highFluid"
+            name="high-fluid"
+            maxlength="4"
+            size="4"
+            required
+          />
+          ml/kg
         </div>
-    </div>
-    <div class="calc-button">
-        <input type="button" id="submitButton3" value="Calculate">
-    </div>
-    <div class="results">
+      </div>
+      <div class="calc-button">
+        <input type="button" id="submitButton3" value="Calculate" />
+      </div>
+      <div class="results">
         <h3 class="results-header">Results:</h3>
-        <p>Estimated Fluid Needs* = <span id="fluid-result" class="comp-text"></span></p>
-    </div>
-    <hr>
-    <section class="disclaimer">
+        <p>
+          Estimated Fluid Needs* =
+          <span id="fluid-result" class="comp-text"></span>
+        </p>
+      </div>
+      <hr />
+      <section class="disclaimer">
         <p>*Adjust for over- or underweight patients</p>
-    </section>
-    <div class="reset-button">
-        <input type="button" id="resetButton" value="Clear Form">
+      </section>
+      <div class="reset-button">
+        <input type="button" id="resetButton" value="Clear Form" />
+      </div>
+      <div class="img-container">
+        <img id="orangecat-image" src="/newcatpic.png" alt="orange cat" />
+      </div>
+      <footer class="footer">
+        <p class="footer-paragraph">
+          Created by <a href="https://mvdutta.github.io/personal-website/index.html" target="_blank"> Maia V. Dutta </a><span>&copy;</span> 2022
+        </p>
+      </footer>
     </div>
-</div>
-<script src="./script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
